@@ -1,70 +1,31 @@
-# Getting Started with Create React App
+# Catrina Salón & Peluquería
 
-This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
+Propuesta de sitio web para presentar al salón. Desarrollado con React y la configuración existente de Create React App.
 
-## Available Scripts
+## Desarrollo
 
-In the project directory, you can run:
+```bash
+npm install
+npm start
+```
 
-### `npm start`
+## Verificación y despliegue
 
-Runs the app in the development mode.\
-Open [http://localhost:3000](http://localhost:3000) to view it in your browser.
+```bash
+CI=true npm test -- --watch=false
+npm run build
+```
 
-The page will reload when you make changes.\
-You may also see any lint errors in the console.
+La salida de producción se genera en `build/`. Vercel puede usar el preset **Create React App** con comando `npm run build` y directorio de salida `build`.
 
-### `npm test`
+## Configuración y datos pendientes de confirmar
 
-Launches the test runner in the interactive watch mode.\
-See the section about [running tests](https://facebook.github.io/create-react-app/docs/running-tests) for more information.
+Editar `src/data/siteConfig.js` antes de publicar:
 
-### `npm run build`
+- `contact.whatsapp`: número oficial configurado como `528115289615`. Los botones abren `wa.me` con un mensaje general o uno específico para cada servicio.
+- `contact.address` y `contact.hours`: dirección y horario proporcionados por el salón. `contact.maps` contiene el iframe oficial del establecimiento y las coordenadas verificadas para indicaciones.
+- `contact.socials`: solo perfiles oficiales verificados.
+- `testimonials`: solo opiniones reales autorizadas. La sección se muestra automáticamente si el arreglo contiene reseñas.
+- `services`: confirmar categorías y descripciones con el salón. La selección actual es una propuesta basada en las fotografías disponibles.
 
-Builds the app for production to the `build` folder.\
-It correctly bundles React in production mode and optimizes the build for the best performance.
-
-The build is minified and the filenames include the hashes.\
-Your app is ready to be deployed!
-
-See the section about [deployment](https://facebook.github.io/create-react-app/docs/deployment) for more information.
-
-### `npm run eject`
-
-**Note: this is a one-way operation. Once you `eject`, you can't go back!**
-
-If you aren't satisfied with the build tool and configuration choices, you can `eject` at any time. This command will remove the single build dependency from your project.
-
-Instead, it will copy all the configuration files and the transitive dependencies (webpack, Babel, ESLint, etc) right into your project so you have full control over them. All of the commands except `eject` will still work, but they will point to the copied scripts so you can tweak them. At this point you're on your own.
-
-You don't have to ever use `eject`. The curated feature set is suitable for small and middle deployments, and you shouldn't feel obligated to use this feature. However we understand that this tool wouldn't be useful if you couldn't customize it when you are ready for it.
-
-## Learn More
-
-You can learn more in the [Create React App documentation](https://facebook.github.io/create-react-app/docs/getting-started).
-
-To learn React, check out the [React documentation](https://reactjs.org/).
-
-### Code Splitting
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/code-splitting](https://facebook.github.io/create-react-app/docs/code-splitting)
-
-### Analyzing the Bundle Size
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size](https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size)
-
-### Making a Progressive Web App
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app](https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app)
-
-### Advanced Configuration
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/advanced-configuration](https://facebook.github.io/create-react-app/docs/advanced-configuration)
-
-### Deployment
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/deployment](https://facebook.github.io/create-react-app/docs/deployment)
-
-### `npm run build` fails to minify
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify](https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify)
+La página no genera enlaces a perfiles sociales inexistentes. Las fotografías están en `src/assets/`.
